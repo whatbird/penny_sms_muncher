@@ -14,14 +14,13 @@ Gem::Specification.new do |s|
   s.email = %q{chris@whatbirdthings.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.textile"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "API_RESPONSES.txt",
      "LICENSE",
-     "README.rdoc",
      "Rakefile",
      "VERSION",
      "lib/penny_sms.rb",
