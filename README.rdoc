@@ -2,36 +2,35 @@
 
 A little bit of code to make PennySMS XML requests.
 
-require 'penny_sms'
-include PennySMSMuncher
-req = PennySMS::XMLRequest.new(penny_sms_api_key, from_email, phone_number, body)
-
-response = req.send_sms
-
-response.success?
-  # true
-response.status
-  # "OK"
-req = PennySMS::XMLRequest.new(penny_sms_api_key, from_email, '6175551234', body)
-
-response = req.send_sms 
-  # PennySMSMuncher::PennySMS::Response object
-
-response.status
-  # "error"
-response.success?
-  # false
-response.fault_code
-  # "500"
-response.fault_name
-  # "Error: unsupported cell number"
-response.raw # Net::HTTPOK object
-  # <Net::HTTPOK 200 OK  readbody=true>
-response.raw.body # string
-  # "<?xml version="1.0" ?><methodResponse><fault><value><struct><member><name>faultCode</name><value><i4>500</i4></value></member><member><name>faultString</name><value><string>Error: unsupported cell number</string></value></member></struct></value></fault></methodResponse>\n"
-response.data   
-  # LibXML::XML::Document object
-
+<code>
+>> require 'penny_sms'
+>> include PennySMSMuncher
+>> req = PennySMS::XMLRequest.new(penny_sms_api_key, from_email, phone_number, body)
+...
+>> response = req.send_sms
+...
+>> response.success?
+=> true
+>> response.status
+=> "OK"
+>> req = PennySMS::XMLRequest.new(penny_sms_api_key, from_email, '6175551234', body)
+...
+>> response = req.send_sms # PennySMSMuncher::PennySMS::Response object
+...
+>> response.status
+=> "error"
+>> response.success?
+=> false
+>> response.fault_code
+=> "500"
+>> response.fault_name
+=> "Error: unsupported cell number"
+>> response.raw # Net::HTTPOK object
+=> #<Net::HTTPOK 200 OK  readbody=true>
+>> response.raw.body # string
+=> "<?xml version="1.0" ?><methodResponse><fault><value><struct><member><name>faultCode</name><value><i4>500</i4></value></member><member><name>faultString</name><value><string>Error: unsupported cell number</string></value></member></struct></value></fault></methodResponse>\n"
+>> response.data   # LibXML::XML::Document object
+</code>
 
 
 Watch out because PennySMS is pretty eager to send you a successful response, even if your email and phone number are badly formatted. And your API key is wrong.
