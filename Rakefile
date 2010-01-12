@@ -5,12 +5,18 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "penny_sms_muncher"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{A little bit of code to make PennySMS XML requests.}
+    gem.description = %Q{A little bit of code to make PennySMS XML requests. But not JSON requests right now.}
     gem.email = "chris@whatbirdthings.com"
     gem.homepage = "http://github.com/whatbird/penny_sms_muncher"
-    gem.authors = ["chris A"]
+    gem.authors = ["chris A", "Matthew Shanley"]
+  
     gem.add_development_dependency "rspec", ">= 1.2.9"
+
+    gem.add_dependency('addressable', '>= 2.1.1')
+    gem.add_dependency('libxml-ruby', '>= 1.1.3')
+  
+  
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

@@ -1,0 +1,96 @@
+**BLANK MESSAGE**
+--- 
+fault: 
+- value: 
+  - struct: 
+    - member: 
+      - name: 
+        - faultCode
+        value: 
+        - i4: 
+          - "403"
+      - name: 
+        - faultString
+        value: 
+        - string: 
+          - "Error: API KEY is not vaild, contact support@pennysms.com"
+
+**BAD API KEY**
+--- 
+fault: 
+- value: 
+  - struct: 
+    - member: 
+      - name: 
+        - faultCode
+        value: 
+        - i4: 
+          - "403"
+      - name: 
+        - faultString
+        value: 
+        - string: 
+          - "Error: API KEY is not vaild, contact support@pennysms.com"
+
+**BAD PHONE NUMBER**
+--- 
+fault: 
+- value: 
+  - struct: 
+    - member: 
+      - name: 
+        - faultCode
+        value: 
+        - i4: 
+          - "500"
+      - name: 
+        - faultString
+        value: 
+        - string: 
+          - "Error: invalid cell number"
+
+**INVALID PHONE #**        
+<?xml version="1.0" ?><methodResponse><fault><value><struct><member><name>faultCode</name><value><i4>500</i4></value></member><member><name>faultString</name><value><string>Error: unsupported cell number</string></value></member></struct></value></fault></methodResponse>
+  
+--- 
+fault: 
+- value: 
+  - struct: 
+    - member: 
+      - name: 
+        - faultCode
+        value: 
+        - i4: 
+          - "500"
+      - name: 
+        - faultString
+        value: 
+        - string: 
+          - "Error: unsupported cell number"
+          
+          
+**??? (ALTERNATE BAD PHONE NUMBER?)**
+--- 
+fault: 
+- value: 
+  - struct: 
+    - member: 
+      - name: 
+        - faultCode
+        value: 
+        - i4: 
+          - "501"
+      - name: 
+        - faultString
+        value: 
+        - string: 
+          - "Error: Try again later"
+          
+**ALL GOOD**
+--- 
+params: 
+- param: 
+  - value: 
+    - string: 
+      - OK
+          
