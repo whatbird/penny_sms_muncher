@@ -22,7 +22,7 @@ module PennySMSMuncher
         req = Net::HTTP::Post.new url.path,
           initheader = {'Content-Type' => @content_type}
         req.body = template
-        request
+        req
       end
 
       def send_sms

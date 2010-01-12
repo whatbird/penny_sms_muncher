@@ -19,10 +19,13 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     "API_RESPONSES.txt",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/penny_sms.rb",
+     "penny_sms_muncher.gemspec",
      "spec/penny_sms_muncher_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
